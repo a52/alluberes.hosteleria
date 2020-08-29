@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="HotelEntities">
+    <EntitySetMapping Name="Ofertas">
+      <EntityTypeMapping TypeName="HotelModel.Oferta">
+        <MappingFragment StoreEntitySet="Ofertas">
+          <ScalarProperty Name="OfertaId" ColumnName="OfertaId" />
+          <ScalarProperty Name="Encabezado" ColumnName="Encabezado" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentarios">
+      <EntityTypeMapping TypeName="HotelModel.Comentario">
+        <MappingFragment StoreEntitySet="Comentarios">
+          <ScalarProperty Name="ComentarioId" ColumnName="ComentarioId" />
+          <ScalarProperty Name="OfertaId" ColumnName="OfertaId" />
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Fecha_comentario" ColumnName="Fecha_comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

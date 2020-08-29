@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alluberes.hosteleria.WebUI", "alluberes.hosteleria.WebUI\alluberes.hosteleria.WebUI.csproj", "{20B95730-FF06-4848-9D23-7F98EEF544C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alluberes.hosteleria.webUILogin", "alluberes.hosteleria.webUILogin\alluberes.hosteleria.webUILogin.csproj", "{537FC632-1840-4D10-A361-393F5BA6A0B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{20B95730-FF06-4848-9D23-7F98EEF544C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20B95730-FF06-4848-9D23-7F98EEF544C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20B95730-FF06-4848-9D23-7F98EEF544C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537FC632-1840-4D10-A361-393F5BA6A0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537FC632-1840-4D10-A361-393F5BA6A0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537FC632-1840-4D10-A361-393F5BA6A0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537FC632-1840-4D10-A361-393F5BA6A0B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

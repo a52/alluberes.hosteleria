@@ -1,0 +1,49 @@
+﻿@model IEnumerable<alluberes.hosteleria.webUILogin.Models.Oferta>
+
+@{
+    ViewBag.Title = "OfertasList";
+}
+
+<h2>OfertasList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (Model != null)
+{
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Encabezado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Encabezado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalle)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.OfertaId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.OfertaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OfertaId })
+        </td>
+    </tr>
+}
+
+</table>
+}
+else
+{
+    <p>No s eencontraron registros en la base de datos</p>
+}

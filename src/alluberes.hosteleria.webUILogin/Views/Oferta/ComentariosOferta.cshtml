@@ -1,0 +1,41 @@
+﻿@model IEnumerable<alluberes.hosteleria.webUILogin.Models.Comentario>
+
+@{
+    Layout = "";
+}
+
+<div class="card">
+    <div class="card-header">Comentarios</div>
+    <div class="card-body">
+        @if (Model == null || Model.Count() == 0)
+        {
+            <p>Se el primero en comentar...</p>
+
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+
+                <div class="row">
+                    <div class="col-3">
+                        <span>@item.Fecha_comentario.ToString()</span>
+                        <span>@item.Usuario</span>
+                    </div>
+
+                    <div class="col-9">
+                        @item.Nota
+
+                    </div>
+
+                </div>
+
+            }
+        }
+
+
+
+
+    </div>
+
+</div>

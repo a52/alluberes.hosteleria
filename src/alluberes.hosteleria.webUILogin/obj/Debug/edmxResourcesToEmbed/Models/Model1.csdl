@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Oferta">
+    <Key>
+      <PropertyRef Name="OfertaId" />
+    </Key>
+    <Property Name="OfertaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Encabezado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentarios_Ofertas" FromRole="Ofertas" ToRole="Comentarios" />
+  </EntityType>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="ComentarioId" />
+    </Key>
+    <Property Name="ComentarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OfertaId" Type="Int32" />
+    <Property Name="Nota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_comentario" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Oferta" Relationship="Self.FK_Comentarios_Ofertas" FromRole="Comentarios" ToRole="Ofertas" />
+  </EntityType>
+  <Association Name="FK_Comentarios_Ofertas">
+    <End Role="Ofertas" Type="Self.Oferta" Multiplicity="0..1" />
+    <End Role="Comentarios" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ofertas">
+        <PropertyRef Name="OfertaId" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="OfertaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ofertas" EntityType="Self.Oferta" />
+    <EntitySet Name="Comentarios" EntityType="Self.Comentario" />
+    <AssociationSet Name="FK_Comentarios_Ofertas" Association="Self.FK_Comentarios_Ofertas">
+      <End Role="Ofertas" EntitySet="Ofertas" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

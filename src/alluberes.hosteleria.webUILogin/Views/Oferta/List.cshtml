@@ -1,0 +1,15 @@
+﻿@model IEnumerable<alluberes.hosteleria.webUILogin.Models.Oferta>
+
+@{ 
+    Layout = "";
+}
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+      <div class="col-md-4">
+          @Html.Partial("OfertaCard", item)
+      </div>
+    }
+</div>
