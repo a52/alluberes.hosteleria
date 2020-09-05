@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="ComentarioId" />
+    </Key>
+    <Property Name="ComentarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OfertaId" Type="Int32" />
+    <Property Name="Nota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_comentario" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Oferta" Relationship="Self.FK_Comentarios_Ofertas" FromRole="Comentarios" ToRole="Ofertas" />
+  </EntityType>
+  <EntityType Name="Habitacion">
+    <Key>
+      <PropertyRef Name="IdHabitacion" />
+    </Key>
+    <Property Name="IdHabitacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Oferta">
+    <Key>
+      <PropertyRef Name="OfertaId" />
+    </Key>
+    <Property Name="OfertaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Encabezado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentarios_Ofertas" FromRole="Ofertas" ToRole="Comentarios" />
+    <NavigationProperty Name="Reservas" Relationship="HotelModel.FK_Reservas_Ofertas" FromRole="Oferta" ToRole="Reserva" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PersonName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActivo" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Reservas" Relationship="HotelModel.FK_Reservas_Usuarios" FromRole="Usuario" ToRole="Reserva" />
+  </EntityType>
+  <Association Name="FK_Comentarios_Ofertas">
+    <End Role="Ofertas" Type="Self.Oferta" Multiplicity="0..1" />
+    <End Role="Comentarios" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ofertas">
+        <PropertyRef Name="OfertaId" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="OfertaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Comentarios" EntityType="Self.Comentario" />
+    <EntitySet Name="Habitacions" EntityType="Self.Habitacion" />
+    <EntitySet Name="Ofertas" EntityType="Self.Oferta" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Comentarios_Ofertas" Association="Self.FK_Comentarios_Ofertas">
+      <End Role="Ofertas" EntitySet="Ofertas" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <EntitySet Name="Reservas" EntityType="HotelModel.Reserva" />
+    <AssociationSet Name="FK_Reservas_Ofertas" Association="HotelModel.FK_Reservas_Ofertas">
+      <End Role="Oferta" EntitySet="Ofertas" />
+      <End Role="Reserva" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservas_Usuarios" Association="HotelModel.FK_Reservas_Usuarios">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Reserva" EntitySet="Reservas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="ReservaId" />
+      <PropertyRef Name="UsuarioId" />
+      <PropertyRef Name="OfertaId" />
+      <PropertyRef Name="FechaReserva" />
+      <PropertyRef Name="CreateDate" />
+    </Key>
+    <Property Name="ReservaId" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="OfertaId" Type="Int32" Nullable="false" />
+    <Property Name="FechaReserva" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Oferta" Relationship="HotelModel.FK_Reservas_Ofertas" FromRole="Reserva" ToRole="Oferta" />
+    <NavigationProperty Name="Usuario" Relationship="HotelModel.FK_Reservas_Usuarios" FromRole="Reserva" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Reservas_Ofertas">
+    <End Type="HotelModel.Oferta" Role="Oferta" Multiplicity="1" />
+    <End Type="HotelModel.Reserva" Role="Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oferta">
+        <PropertyRef Name="OfertaId" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="OfertaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservas_Usuarios">
+    <End Type="HotelModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HotelModel.Reserva" Role="Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -92,6 +92,8 @@ E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\roslyn\vbc.rsp
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\roslyn\VBCSCompiler.exe
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\roslyn\VBCSCompiler.exe.config
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Antlr3.Runtime.dll
+E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\EntityFramework.dll
+E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\EntityFramework.SqlServer.dll
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Microsoft.Web.Infrastructure.dll
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Newtonsoft.Json.dll
@@ -103,6 +105,8 @@ E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.WebPag
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.WebPages.dll
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.WebPages.Razor.dll
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\WebGrease.dll
+E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\EntityFramework.xml
+E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\EntityFramework.SqlServer.xml
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Newtonsoft.Json.xml
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.Helpers.xml
@@ -113,8 +117,8 @@ E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.WebPag
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.WebPages.Deployment.xml
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\System.Web.WebPages.Razor.xml
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\bin\Antlr3.Runtime.pdb
-E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\obj\Debug\alluberes.hosteleria.WebUI.csprojAssemblyReference.cache
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\obj\Debug\alluberes.hosteleria.WebUI.csproj.CoreCompileInputs.cache
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\obj\Debug\alluberes.hosteleria.WebUI.csproj.CopyComplete
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\obj\Debug\alluberes.hosteleria.WebUI.dll
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\obj\Debug\alluberes.hosteleria.WebUI.pdb
+E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.WebUI\obj\Debug\alluberes.hosteleria.WebUI.csprojAssemblyReference.cache

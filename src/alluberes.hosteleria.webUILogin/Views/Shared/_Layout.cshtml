@@ -11,27 +11,19 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { @class="nav-item" })</li>
                     @if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Ofertas", "index", "Oferta")</li>
+                        <li class="nav-link">@Html.ActionLink("Ofertas", "index", "Oferta", new { @class = "nav-item" })</li>
                     }
 
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("About", "About", "Home", new { @class = "nav-item" })</li>
 
                     @if (System.Web.HttpContext.Current.User.IsInRole("ayuda"))
                     {
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-item" })</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

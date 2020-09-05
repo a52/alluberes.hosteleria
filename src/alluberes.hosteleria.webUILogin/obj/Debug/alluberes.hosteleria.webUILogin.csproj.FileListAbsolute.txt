@@ -107,3 +107,4 @@ E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.webUILogin\obj\Debug\allube
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.webUILogin\obj\Debug\alluberes.hosteleria.webUILogin.pdb
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.webUILogin\bin\App_Data\aspnet-alluberes.hosteleria.webUILogin-20200829112443.mdf
 E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.webUILogin\bin\App_Data\aspnet-alluberes.hosteleria.webUILogin-20200829112443_log.ldf
+E:\Dev\alluberes.Hosteleria\src\alluberes.hosteleria.webUILogin\obj\Debug\alluberes.hosteleria.webUILogin.csprojAssemblyReference.cache

@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = "";
+
+}
+<div class="float-right">
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <div>
+            <span>Bienvenido @HttpContext.Current.User.Identity.Name</span>
+            @Html.ActionLink("Salir", "logout", "usuario")
+        </div>
+
+
+    }
+    else
+    {
+        <div>
+            @Html.ActionLink("Login", "index", "usuario")
+
+        </div>
+    }
+</div>

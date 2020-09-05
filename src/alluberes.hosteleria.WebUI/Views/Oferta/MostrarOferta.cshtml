@@ -1,0 +1,78 @@
+﻿@model alluberes.hosteleria.WebUI.Models.Oferta
+
+@{
+    ViewBag.Title = "MostrarOferta";
+}
+
+<h2>MostrarOferta</h2>
+
+<div>
+    @Html.Partial("OfertaCard", Model)
+</div>
+
+<div>
+    @{ Html.RenderAction("ComentariosOferta", new { id = Model.OfertaId }); }
+
+</div>
+
+
+<div>
+
+    @using (Html.BeginForm("Reservar", "clientes", new { id=Model.OfertaId }, FormMethod.Post))
+    {
+
+    <fieldset>
+        <legend>Realizar reserva</legend>
+
+
+        <div class="row">
+            <div class="col">
+                <label>Fecha</label>
+                <input type="date" name="fechareseva" id="fechareserva" />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label>Comentario</label>
+                <textarea name="comentario" class="form-control" rows="5"></textarea>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Reservar</button>
+            </div>
+        </div>
+
+    </fieldset>
+
+
+    }
+
+</div>
+
+
+
+
+
+<div>
+
+    @using (Html.BeginForm("PostComentario", "Oferta", FormMethod.Post))
+    {
+
+        <input type="hidden" name="OfertaId" value="@Model.OfertaId" />
+        <div class="row">
+            <div class="col-10">
+                <textarea name="Nota" class="form-control" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Comentar</button>
+            </div>
+        </div>
+    }
+
+</div>
