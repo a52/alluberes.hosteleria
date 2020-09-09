@@ -9,12 +9,12 @@ namespace alluberes.hosteleria.WebUI.Controllers
     [Authorize]
     public class OfertaController : Controller
     {
-        private Models.HotelEntities repo;
+        private Models.HotelEntities1 repo;
 
 
         public OfertaController()
         {
-            this.repo = new Models.HotelEntities();
+            this.repo = new Models.HotelEntities1();
         }
 
 

@@ -10,12 +10,12 @@ namespace alluberes.hosteleria.WebUI.Controllers
     public class UsuarioController : Controller
     {
 
-        Models.HotelEntities repo;
+        Models.HotelEntities1 repo;
         Models.SecurityManager sm;
 
         public UsuarioController()
         {
-            this.repo = new Models.HotelEntities();
+            this.repo = new Models.HotelEntities1();
             this.sm = new Models.SecurityManager();
         }
 

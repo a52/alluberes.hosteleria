@@ -13,10 +13,10 @@ namespace alluberes.hosteleria.WebUI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HotelEntities : DbContext
+    public partial class HotelEntities1 : DbContext
     {
-        public HotelEntities()
-            : base("name=HotelEntities")
+        public HotelEntities1()
+            : base("name=HotelEntities1")
         {
         }
     
@@ -29,7 +29,7 @@ namespace alluberes.hosteleria.WebUI.Models
         public virtual DbSet<Comentario> Comentarios { get; set; }
         public virtual DbSet<Habitacion> Habitacions { get; set; }
         public virtual DbSet<Oferta> Ofertas { get; set; }
-        public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Reserva> Reservas { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
     }
 }

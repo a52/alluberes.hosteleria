@@ -9,11 +9,11 @@ namespace alluberes.hosteleria.WebUI.Controllers
     public class ClientesController : Controller
     {
 
-        Models.HotelEntities repo;
+        Models.HotelEntities1 repo;
 
         public ClientesController()
         {
-            this.repo = new Models.HotelEntities();
+            this.repo = new Models.HotelEntities1();
         }
 
 

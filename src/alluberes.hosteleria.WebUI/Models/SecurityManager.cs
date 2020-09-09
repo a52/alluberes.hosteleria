@@ -7,11 +7,11 @@ namespace alluberes.hosteleria.WebUI.Models
 {
     public class SecurityManager
     {
-        Models.HotelEntities repo;
+        Models.HotelEntities1 repo;
 
         public SecurityManager()
         {
-            this.repo = new HotelEntities();
+            this.repo = new HotelEntities1();
 
 
         }
