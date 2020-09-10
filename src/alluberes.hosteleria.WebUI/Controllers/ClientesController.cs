@@ -34,26 +34,36 @@ namespace alluberes.hosteleria.WebUI.Controllers
         public ActionResult Reservar(int id, DateTime fechareseva, string comentario)
         {
 
-            var idUsuario = Models.ComonFunctions.getCurrentUsuarioId();
-            var oferta = this.repo.Ofertas.Where(x => x.OfertaId.Equals(id)).FirstOrDefault();
-            var usuario = this.repo.Usuarios.Where(x => x.UsuarioId.Equals(idUsuario)).FirstOrDefault();
+            try
+            {
+                var idUsuario = Models.ComonFunctions.getCurrentUsuarioId();
+                var oferta = this.repo.Ofertas.Where(x => x.OfertaId.Equals(id)).FirstOrDefault();
+                var usuario = this.repo.Usuarios.Where(x => x.UsuarioId.Equals(idUsuario)).FirstOrDefault();
 
-            var reserva = new Models.Reserva();
-            reserva.Usuario = usuario;
-            reserva.Oferta = oferta;
-            reserva.FechaReserva = fechareseva;
-            reserva.Comentario = comentario;
-
-
-            //oferta.Reservas.Add(reserva);
-
+                var reserva = new Models.Reserva();
+                reserva.Usuario = usuario;
+                reserva.Oferta = oferta;
+                reserva.FechaReserva = fechareseva;
+                reserva.Comentario = comentario;
 
 
+                //oferta.Reservas.Add(reserva);
 
-            this.repo.Reservas.Add(reserva);
-            this.repo.SaveChanges();
 
-            return Redirect("index");
+
+
+                this.repo.Reservas.Add(reserva);
+                this.repo.SaveChanges();
+
+                Models.ComonFunctions.ShowSuccessMessage(this, "Reserva realizada satisfactoriamente.");
+
+            }
+            catch (Exception ex)
+            {
+                Models.ComonFunctions.ShowErrorMessage(this, ex);
+            }
+
+            return RedirectToAction("index");
 
         }
 

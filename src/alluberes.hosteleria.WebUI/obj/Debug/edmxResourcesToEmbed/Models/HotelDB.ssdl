@@ -41,7 +41,7 @@
     <Property Name="ReservaId" Type="int" Nullable="false" />
     <Property Name="UsuarioId" Type="int" Nullable="false" />
     <Property Name="OfertaId" Type="int" Nullable="false" />
-    <Property Name="FechaReserva" Type="datetime" Nullable="false" />
+    <Property Name="FechaReserva" Type="datetime" />
     <Property Name="Comentario" Type="varchar(max)" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
   </EntityType>

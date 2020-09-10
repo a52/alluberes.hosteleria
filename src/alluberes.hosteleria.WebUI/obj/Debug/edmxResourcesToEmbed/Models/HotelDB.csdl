@@ -44,7 +44,7 @@
     <Property Name="ReservaId" Type="Int32" Nullable="false" />
     <Property Name="UsuarioId" Type="Int32" Nullable="false" />
     <Property Name="OfertaId" Type="Int32" Nullable="false" />
-    <Property Name="FechaReserva" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaReserva" Type="DateTime" Precision="3" />
     <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Oferta" Relationship="Self.FK_Reservas_Ofertas" FromRole="Reservas" ToRole="Ofertas" />

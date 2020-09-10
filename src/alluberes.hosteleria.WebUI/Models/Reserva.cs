@@ -17,7 +17,7 @@ namespace alluberes.hosteleria.WebUI.Models
         public int ReservaId { get; set; }
         public int UsuarioId { get; set; }
         public int OfertaId { get; set; }
-        public System.DateTime FechaReserva { get; set; }
+        public Nullable<System.DateTime> FechaReserva { get; set; }
         public string Comentario { get; set; }
         public System.DateTime CreateDate { get; set; }
     

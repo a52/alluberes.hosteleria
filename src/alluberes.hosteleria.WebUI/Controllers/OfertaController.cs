@@ -63,11 +63,12 @@ namespace alluberes.hosteleria.WebUI.Controllers
                 this.repo.Ofertas.Add(oferta);
                 this.repo.SaveChanges();
 
+                Models.ComonFunctions.ShowSuccessMessage(this, "Oferta registrada satisfactoriamente.");
                 return RedirectToAction("OfertasList");
 
-            } catch // (Exception ex)
+            } catch (Exception ex)
             {
-
+                Models.ComonFunctions.ShowErrorMessage(this, ex);
 
                 return View(oferta);
             }
