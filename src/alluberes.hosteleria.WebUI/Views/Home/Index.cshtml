@@ -7,32 +7,9 @@
 
 </div>
 
+<div>@Html.ActionLink("About", "about", "Home")</div>
 
-<div class="row float-right" style="background-color: yellow;">
-    
-    <div class="col-md-2" style="background-color: white;">
-        uLTIMOS DAS COLUMNAS
-    </div>
-
-</div>
-
-<div class="row float-right">
-
-    <div class="col-md-4 float-right">
-
-        <div class="card float-right">
-            <div class="card-header">
-                Float to the right
-            </div>
-            <div class="card-body">
-                <p>Esta a la derecha</p>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-
+@{ Html.RenderAction("list", "oferta"); }
 
 
 <div class="card col-3">

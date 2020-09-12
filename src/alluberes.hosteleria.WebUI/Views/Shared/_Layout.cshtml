@@ -10,26 +10,28 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
 
 </head>
-<body class="container body-content">
-    <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">Hoteleria 2020</a>
-        <div>
-            <ul class="navbar-nav">
-                <li class="nav-item">@Html.ActionLink("Inicio", "Index", new { Controller = "Home" }, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Oferta", "Index", "Oferta", new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Mantenimiento", "Index", new { Controller = "Clientes" }, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Ayuda", "About", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Usuario", "Index", "Usuario", null, new { @class = "nav-link" })</li>
-            </ul>
+<body class="container">
+    <header>
+        <nav class="navbar navbar-expand-md bg-light">
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">Hoteleria 2020</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">@Html.ActionLink("Ofertas", "index", "Oferta")</li>
+                    <li class="nav-item">@Html.ActionLink("Mantenimiento", "Index", new { Controller = "Clientes" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Ayuda", "About", "Home", null, new { @class = "nav-link" })</li>
+                </ul>
 
-        </div>
-        <div>
-            @{ Html.RenderPartial("WelcomeUser"); }
-        </div>
-    </nav>
+            </div>
+            <div class="my-2 my-lg-0">
+                @{ Html.RenderPartial("WelcomeUser"); }
+            </div>
+        </nav>
+    </header>
 
-
-    <div class="container body-content" id="bodycontainer">
+    <div class=" body-content" id="bodycontainer">
         @if (TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_SUCCESS_MESSAGES] != null)
         {
             foreach (var msg in TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_SUCCESS_MESSAGES] as List<string>)
@@ -42,6 +44,7 @@
                 </div>
             }
         }
+
         @if (TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_ERROR_MESSAGES] != null)
         {
             foreach (var msg in TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_ERROR_MESSAGES] as List<string>)

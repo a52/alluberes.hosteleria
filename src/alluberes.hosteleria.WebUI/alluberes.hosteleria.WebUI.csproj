@@ -223,6 +223,10 @@
     <Content Include="Models\HotelDB.edmx.diagram">
       <DependentUpon>HotelDB.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\hosteleria - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hosteleria - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hosteleria - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -342,6 +346,7 @@
     <Content Include="Views\Oferta\OfertasList.cshtml" />
     <Content Include="Views\Shared\WelcomeUser.cshtml" />
     <Content Include="Views\Clientes\MisDatos.cshtml" />
+    <Content Include="Views\Home\MostrarError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

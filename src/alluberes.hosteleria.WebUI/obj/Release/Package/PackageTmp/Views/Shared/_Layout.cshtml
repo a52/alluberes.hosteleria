@@ -1,34 +1,64 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
 </head>
-<body>
+<body class="container">
+    <header>
+        <nav class="navbar navbar-expand-md bg-light">
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">Hoteleria 2020</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">@Html.ActionLink("Mantenimiento", "Index", new { Controller = "Clientes" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Ayuda", "About", "Home", null, new { @class = "nav-link" })</li>
+                </ul>
 
-    
-    <div class="">
-        <div class="container">
-            <ul>
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Habitaciones", "Index", "Habitacion")</li>
-                <li><a href="/hotel/habitacion">Habilitacion 2</a></li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            </ul>
+            </div>
+            <div class="my-2 my-lg-0">
+                @{ Html.RenderPartial("WelcomeUser"); }
+            </div>
+        </nav>
+    </header>
 
+    <div class=" body-content" id="bodycontainer">
+        @if (TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_SUCCESS_MESSAGES] != null)
+        {
+            foreach (var msg in TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_SUCCESS_MESSAGES] as List<string>)
+            {
+                <div class="alert alert-success" role="alert">
+                    @msg
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+        }
+        @if (TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_ERROR_MESSAGES] != null)
+        {
+            foreach (var msg in TempData[alluberes.hosteleria.WebUI.Models.ComonFunctions.TAG_ERROR_MESSAGES] as List<string>)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @msg
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+        }
 
-        </div>
-    </div>
-    <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
@@ -36,3 +66,5 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+

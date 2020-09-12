@@ -12,6 +12,8 @@ namespace alluberes.hosteleria.WebUI.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HotelEntities1 : DbContext
     {
@@ -31,5 +33,26 @@ namespace alluberes.hosteleria.WebUI.Models
         public virtual DbSet<Oferta> Ofertas { get; set; }
         public virtual DbSet<Reserva> Reservas { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+    
+        public virtual int InsertReserva(Nullable<int> usuarioId, Nullable<int> ofertaId, Nullable<System.DateTime> cuando, string comentario)
+        {
+            var usuarioIdParameter = usuarioId.HasValue ?
+                new ObjectParameter("UsuarioId", usuarioId) :
+                new ObjectParameter("UsuarioId", typeof(int));
+    
+            var ofertaIdParameter = ofertaId.HasValue ?
+                new ObjectParameter("OfertaId", ofertaId) :
+                new ObjectParameter("OfertaId", typeof(int));
+    
+            var cuandoParameter = cuando.HasValue ?
+                new ObjectParameter("Cuando", cuando) :
+                new ObjectParameter("Cuando", typeof(System.DateTime));
+    
+            var comentarioParameter = comentario != null ?
+                new ObjectParameter("Comentario", comentario) :
+                new ObjectParameter("Comentario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertReserva", usuarioIdParameter, ofertaIdParameter, cuandoParameter, comentarioParameter);
+        }
     }
 }

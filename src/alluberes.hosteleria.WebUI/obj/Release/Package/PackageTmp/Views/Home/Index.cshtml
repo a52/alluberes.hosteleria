@@ -4,8 +4,42 @@
 
 <div class="jumbotron">
     <h1 class="hotel">@ViewBag.Title</h1>
-    
+
 </div>
+
+
+
+@*@{ Html.RenderAction("list", "oferta"); }*@
+
+
+<div class="card col-3">
+    <img src="@Url.Content("~/images/oip.jpg")" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Reserva tu habitacion</h5>
+        <p class="card-text">Buscas descansar. La mejor forma de hacerlo es rentando una habitacion en Hoteles 2020..</p>
+        <a href="#" class="btn btn-primary">Reservar</a>
+    </div>
+</div>
+
+<div class="card col-6">
+    <img src="@Url.Content("~/images/oip.jpg")" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Vista tus amigos</h5>
+        <p class="card-text">Buscas descansar. La mejor forma de hacerlo es rentando una habitacion en Hoteles 2020..</p>
+        <a href="#" class="btn btn-primary">Reservar</a>
+    </div>
+</div>
+
+
+<div class="card col-md-5">
+    <img src="@Url.Content("~/images/oip.jpg")" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Day Pass</h5>
+        <p class="card-text">Buscas descansar. La mejor forma de hacerlo es rentando una habitacion en Hoteles 2020..</p>
+        <a href="#" class="btn btn-primary">Reservar</a>
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col-md-4">
